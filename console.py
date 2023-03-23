@@ -10,7 +10,7 @@ from models.state import State
 from models.city import City
 from models.amenity import Amenity
 from models.review import Review
-
+import shlex
 
 class HBNBCommand(cmd.Cmd):
     """ Contains the functionality for the HBNB console"""
@@ -127,14 +127,15 @@ class HBNBCommand(cmd.Cmd):
         
         for arg in arguments[1:]:
             try:
-               key, value = arg[1].split("=")
-               if value[0] == '"' and value[-1] == '"':
-                    value = value[1:-1].replace('_', ' ')
-               if '.' in value:
-                   value = float(value)
-               else:
-                   value = int(value)
-               dictionary[key] = value
+                if '=' in arg:
+                    key, value = arg.split("=")
+                    if value[0] == '"' and value[-1] == '"':
+                        value = shlex.split(value)[0].replace('_', ' ')
+                    if '.' in value:
+                        value = float(value)
+                    else:
+                        value = int(value)
+                    dictionary[key] = value
             except:
                 pass
         new_instance = HBNBCommand.classes[ClasseName]()

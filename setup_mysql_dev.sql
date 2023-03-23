@@ -1,9 +1,7 @@
-"""
-script that prepares a MySQL server for the project
-"""
+-- script that prepares a MySQL server for the project
 
-Create DATABASE IF NOT EXIST hbnb_dev_db;
-CREATE USER IF NOT EXIST 'hbnb_dev'@'localhost' IDENTIFIED BY 'hbnb_dev_pwd';
+Create DATABASE IF NOT EXISTS hbnb_dev_db;
+CREATE USER IF NOT EXISTS 'hbnb_dev'@'localhost' IDENTIFIED BY 'hbnb_dev_pwd';
 USE hbnb_dev_db;
 GRANT ALL PRIVILEGES ON hbnb_dev_db.* TO 'hbnb_dev'@'localhost';
 USE performance_schema;

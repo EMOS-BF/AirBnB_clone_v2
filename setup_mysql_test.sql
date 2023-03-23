@@ -1,6 +1,5 @@
-"""
-a script that prepares a MySQL server for the project
-"""
+-- a script that prepares a MySQL server for the project
+
 
 CREATE DATATBASE IF NOT EXISTS hbnb_test_db;
 CREATE USER if NOT EXISTS 'hbnb_test'@'localhost' IDENTIFIED By hbnb_test_pwd;

@@ -127,8 +127,9 @@ class HBNBCommand(cmd.Cmd):
         
         for arg in arguments[1:]:
             try:
-               key, value = arg.split("=")
-               value = value[1:-1].replace("_", " ")
+               key, value = arg[1].split("=")
+               if value[0] == '"' and value[-1] == '"':
+                    value = value[1:-1].replace('_', ' ')
                if '.' in value:
                    value = float(value)
                else:

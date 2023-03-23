@@ -2,8 +2,8 @@
 a script that prepares a MySQL server for the project
 """
 
-CREATE DATATBASE IF NOT EXIST hbnb_test_db;
-CREATE USER if NOT EXIST 'hbnb_test'@'localhost' IDENTIFIED By hbnb_test_pwd;
+CREATE DATATBASE IF NOT EXISTS hbnb_test_db;
+CREATE USER if NOT EXISTS 'hbnb_test'@'localhost' IDENTIFIED By hbnb_test_pwd;
 USE hbnb_test_db;
 CREATE ALL PRIVILEGES ON hbnb_test_db.* TO 'hbnb_test'@'localhost';
 USE performance_schema;

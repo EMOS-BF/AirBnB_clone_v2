@@ -24,7 +24,7 @@ class FileStorage:
                 if key == value.__class__ or key == value.__class__.__name__:
                     new_dict[key] = value
             return new_dict
-        return FileStorage.__objects
+        return self.__objects
 
     def new(self, obj):
         """Adds new object to storage dictionary"""

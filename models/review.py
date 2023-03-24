@@ -6,7 +6,7 @@ from sqlalchemy import Column, String, ForeignKey, relationship
 
 class Review(BaseModel):
     """ Review classto store review information """
-    __tablename__ = "states"
+    __tablename__ = "reviews"
     if getenv("HBNB_TYPE_STORAGE") == "db":
         text = Column(String(1024), nullable=False)
         place_id = Column(String(60), ForeignKey('places.id'), nullable=False)

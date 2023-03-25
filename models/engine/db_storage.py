@@ -16,8 +16,8 @@ classes = {"Amenity": Amenity, "City": City,
 
 
 class BaseModel:
-    __engine = None
-    __session = None
+    engine = None
+    session = None
     
     def __init__(self):
         user = os.getenv('HBNB_MYSQL_USER')
